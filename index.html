@@ -48,12 +48,80 @@
     </div>
 
 
-      <script>
-    
-</script>
+ <div style="display: none">
+      <input
+        id="origin-input"
+        class="controls"
+        type="text"
+        placeholder="Enter an origin location"
+      />
+
+      <input
+        id="destination-input"
+        class="controls"
+        type="text"
+        placeholder="Enter a destination location"
+      />
+
+      <div id="mode-selector" class="controls">
+        <input
+          type="radio"
+          name="type"
+          id="changemode-walking"
+          checked="checked"
+        />
+        <label for="changemode-walking">Walking</label>
+
+        <input type="radio" name="type" id="changemode-transit" />
+        <label for="changemode-transit">Transit</label>
+
+        <input type="radio" name="type" id="changemode-driving" />
+        <label for="changemode-driving">Driving</label>
+      </div>
+    </div>
+
+
+    <div id="msg"></div>
+
+    <div class="jumbotron">
+        <div class="container-fluid">
+            <h1>Find The Distance Between Two Places.</h1>
+            <p>This App Will Help You Calculate Your Travelling Distances.</p>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="from" class="col-xs-2 control-label"><i class="far fa-dot-circle"></i></label>
+                    <div class="col-xs-4">
+                        <input type="text" id="from" placeholder="Origin" class="form-control">
+                    </div>
+               </div>
+               <div class="form-group">
+                
+                    <label for="to" class="col-xs-2 control-label"><i class="fas fa-map-marker-alt"></i></label>
+                    <div class="col-xs-4">
+                        <input type="text" id="to" placeholder="Destination" class="form-control">
+                    </div>
+                  
+                 </div>
+                 
+            </form>
+
+            <div class="col-xs-offset-2 col-xs-10">
+                <button class="btn btn-info btn-lg " onclick="calcRoute();"><i class="fas fa-map-signs"></i></button>
+            </div>
+        </div>
+        <div class="container-fluid">
+         <div id="googleMap"></div>
+            <div id="output">
+
+            </div>
+        </div>
+    </div>
 
 
 
+
+         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAh14jX_szt0Dz-eG_aPWZ_T29kYhM6g8&libraries=places"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="page.js"></script>
   </body>
 </html>
