@@ -82,7 +82,7 @@ function calcRoute() {
         origin: document.getElementById("from").value,
         destination: document.getElementById("to").value,
         travelMode: google.maps.TravelMode.DRIVING, //WALKING, BYCYCLING, TRANSIT
-        unitSystem: google.maps.UnitSystem.IMPERIAL
+        unitSystem: google.maps.UnitSystem.METRIC
     }
 
     //pass the request to the route method
@@ -104,14 +104,16 @@ function calcRoute() {
             //show error message
             output.innerHTML = "<div class='alert-danger'><i class='fas fa-exclamation-triangle'></i> Could not retrieve driving distance.</div>";
         }
+
+        let time = result.routes[0].legs[0].duration
+        let div = time / 12
+        let dist = result.routes[0].legs[0].distance.value 
             console.log(result)
+           console.log(time)
+           console.log(dist)
+           
     });
-
-
-
 }
-
-
 
 //create autocomplete objects for all inputs
 var options = {
