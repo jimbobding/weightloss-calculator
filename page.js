@@ -45,12 +45,11 @@ function result() {
     let kgs = parseFloat(document.getElementById("weight").value)
     let calorieslost = weightHeight() * kgs;
     console.log(calorieslost)
-     document.getElementById('yourResult').innerHTML = calorieslost
+    document.getElementById('yourResult').innerHTML = calorieslost
     return calorieslost
-
    
 }
-
+ console.log(result())
 
 //javascript.js
 //set map options
@@ -81,7 +80,7 @@ function calcRoute() {
     var request = {
         origin: document.getElementById("from").value,
         destination: document.getElementById("to").value,
-        travelMode: google.maps.TravelMode.DRIVING, //WALKING, BYCYCLING, TRANSIT
+        travelMode: google.maps.TravelMode.WALKING, //WALKING, BYCYCLING, TRANSIT
         unitSystem: google.maps.UnitSystem.METRIC
     }
 
@@ -89,9 +88,15 @@ function calcRoute() {
     directionsService.route(request, function (result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
 
+        let kgs = parseFloat(document.getElementById("weight").value)
+        let calorieslost = weightHeight() * kgs;
+        let time = result.routes[0].legs[0].duration.value / 60
+        let timeText = result.routes[0].legs[0].duration.text
+        let dist = result.routes[0].legs[0].distance.value 
+        let calsPerMIn = time * calorieslost
             //Get distance and time
             const output = document.querySelector('#output');
-            output.innerHTML = "<div class='alert-info'>From: " + document.getElementById("from").value + ".<br />To: " + document.getElementById("to").value + ".<br /> Driving distance <i class='fas fa-road'></i> : " + result.routes[0].legs[0].distance.text + ".<br />Duration <i class='fas fa-hourglass-start'></i> : " + result.routes[0].legs[0].duration.text + ".</div>";
+            output.innerHTML = "<div class='alert-info'>From: " + document.getElementById("from").value + ".<br />To: " + document.getElementById("to").value + ".<br /> Driving distance <i class='fas fa-road'></i> : " + result.routes[0].legs[0].distance.text + ".<br />Duration <i class='fas fa-hourglass-start'></i> : " + result.routes[0].legs[0].duration.text + ".</div>" +  "You will burn " + calsPerMIn + " during this journey";
 
             //display route
             directionsDisplay.setDirections(result);
@@ -105,13 +110,6 @@ function calcRoute() {
             output.innerHTML = "<div class='alert-danger'><i class='fas fa-exclamation-triangle'></i> Could not retrieve driving distance.</div>";
         }
 
-        let time = result.routes[0].legs[0].duration
-        let div = time / 12
-        let dist = result.routes[0].legs[0].distance.value 
-            console.log(result)
-           console.log(time)
-           console.log(dist)
-           
     });
 }
 
@@ -127,7 +125,7 @@ var input2 = document.getElementById("to");
 var autocomplete2 = new google.maps.places.Autocomplete(input2, options);
 
 
-
+document.getElementById("mainBtn").addEventListener("click", weight);
 
 
 
