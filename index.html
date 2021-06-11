@@ -18,36 +18,42 @@
 </head>
 
 <body>
-   
 
-    <div class="container form-container" >
+
+    <div class="container form-container">
         <div class="row">
             <div class="col">
-                 <h1 class=" header">Weight Calculator</h1>
-                 <div class="container input-container">
-                    <input id="weight" type="number" placeholder="weight in kgs" />
-                    <button id="btn1">Click</button>
-                    <p id="weightx"></p>
-                    <label for="speed">Choose your walking speed:</label>
-                    <select id="selectbox" name="speed">
-                        <option value="1.96">Slow</option>
-                        <option value="3.24">Casual</option>
-                        <option value="5.76">Fast</option>
-                    </select>
+                <h1 class=" header">Weight Calculator</h1>
+                <div class="container input-container">
 
-                    <input onclick="speed()" type="submit" />
-                    <p id="speedx"></p>
-                    <input id="height" type="number" placeholder="height in mteres" />
-                    <input onclick="height1()" type="submit" />
-                    <p id="heightx"></p>
+                    <form class="row g-3" onsubmit="return false">
+                        <div class="col-md-6">
+                            <label for="inputEmail4" class="form-label">Weight</label>
+                            <input type="number" class="form-control" id="weight" placeholder="weight in kgs" />
+                            <p id="weightx"></p>
 
-                    <input onclick="result()" type="submit" />
-                    <p>You burn <span id="yourResult"></span> calories per minutes</p>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputPassword4" class="form-label">Height</label>
+                            <input type="integer" class="form-control" id="height" placeholder="height in mteres">
+                            <p id="heightx"></p>
 
+                        </div>
+                        <div class="col-12">
+                            <label for="speed" class="form-label" >Choose your walking speed:</label>
+                            <select id="selectbox" name="speed" class="form-control">
+                                <option value="1.96">Slow</option>
+                                <option value="3.24">Casual</option>
+                                <option value="5.76">Fast</option>
+                            </select>
+                            <p id="speedx"></p>
+                            <input onclick="result(); speed(); height1()" type="submit" />
+                            <p>You burn <span id="yourResult"></span> calories per minutes</p>
+                        </div>
+                    </form>
                 </div>
             </div>
-       </div>
-
+        </div>
         <div style="display: none">
             <input id="origin-input" class="controls" type="text" placeholder="Enter an origin location" />
 
@@ -103,7 +109,7 @@
             </div>
         </div>
     </div>
- </div>
+    </div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAh14jX_szt0Dz-eG_aPWZ_T29kYhM6g8&libraries=places">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

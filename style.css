@@ -28,7 +28,8 @@ body {
   }
 
   .input-container {
-      
+      justify-content: center;
+      text-align: center;
   }
 
   .header {

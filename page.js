@@ -1,6 +1,6 @@
 
 
-document.getElementById("btn1").addEventListener("click", weight);
+//document.getElementById("btn1").addEventListener("click", weight);
 
 
 // Function to multiply imputed weight by 0.035 and return the value
@@ -8,7 +8,7 @@ let kgs = parseFloat(document.getElementById("weight").value)
 
 function weight() {
     let kgs = parseFloat(document.getElementById("weight").value)
-    let myWeight = document.getElementById("weightx").innerHTML = kgs * 0.035;
+    let myWeight = kgs * 0.035;
 
     console.log(kgs)
     return myWeight
@@ -27,7 +27,7 @@ function speed() {
 
 function height1() {
 let height = document.getElementById("height")
-let myHeightDivdeSpeed = document.getElementById("heightx").innerHTML = speed() / height.value 
+let myHeightDivdeSpeed =  speed() / height.value 
     console.log(myHeightDivdeSpeed)
     return myHeightDivdeSpeed
 }
@@ -91,8 +91,6 @@ function calcRoute() {
         let kgs = parseFloat(document.getElementById("weight").value)
         let calorieslost = weightHeight() * kgs;
         let time = result.routes[0].legs[0].duration.value / 60
-        let timeText = result.routes[0].legs[0].duration.text
-        let dist = result.routes[0].legs[0].distance.value 
         let calsPerMIn = time * calorieslost
             //Get distance and time
             const output = document.querySelector('#output');
