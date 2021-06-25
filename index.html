@@ -42,12 +42,12 @@
                         <div class="col-12">
                             <label for="speed" class="form-label" >Choose your walking speed:</label>
                             <select id="selectbox" name="speed" class="form-control">
-                                <option value="1.96">Slow</option>
-                                <option value="3.24">Casual</option>
-                                <option value="5.76">Fast</option>
+                                <option value="1">Slow</option>
+                                <option value="1.6">Casual</option>
+                                <option value="2.1">Fast</option>
                             </select>
                             <p id="speedx"></p>
-                            <input onclick="result(); speed(); height1()" type="submit" />
+                            <input onclick="result();  height1()" type="submit" />
                             <p>You burn <span id="yourResult"></span> calories per minutes</p>
                         </div>
                     </form>
@@ -101,7 +101,7 @@
                             class="fas fa-map-signs"></i></button>
                 </div>
             </div>
-            <div class="container-fluid">
+           <div class="container-fluid">
                 <div id="googleMap"></div>
                 <div id="output">
 
@@ -112,6 +112,12 @@
     </div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAh14jX_szt0Dz-eG_aPWZ_T29kYhM6g8&libraries=places">
     </script>
+       <!-- <script
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAh14jX_szt0Dz-eG_aPWZ_T29kYhM6g8&libraries=places&callback=initAutocomplete"
+         async
+         defer
+         ></script>-->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="page.js"></script>
 </body>
