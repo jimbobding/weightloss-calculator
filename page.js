@@ -3,7 +3,7 @@
 //document.getElementById("btn1").addEventListener("click", weight);
 
 
-// Function to multiply imputed weight by 0.035 and return the value
+// Function to multiply inputed weight by 0.035 and return the value
  
 
 function weight() {
@@ -105,16 +105,31 @@ function calcRoute() {
         let duration = result.routes[0].legs[0].distance.value /  speed() 
         // Hours = duration divided by modulou seconds in an hor by hours in a day divided by second in an hour 
         let hours = Math.floor(duration % (3600*24) / 3600);
- 
-
+             if (hours > 0) {
+                hours = hours + " hours ";
+            } else {
+                hours = "";
+            }
         let minutes = Math.floor(duration % 3600 / 60);
+              if (minutes > 0) {
+                minutes = minutes + " minutes ";
+            } else {
+                minutes = "";
+            }
         let days = Math.floor(duration / (3600*24));
+              if (days > 0) {
+                days = days + " days ";
+            } else {
+                days = "";
+            }
+
+        
         let kgs = parseFloat(document.getElementById("weight").value)
         let calorieslost = weightHeight() * kgs;
         let time = result.routes[0].legs[0].duration.value / 60
         let calsPerMIn = time * calorieslost
         
-
+      
 
         console.log(result.routes[0].legs[0].duration.text)
         console.log(duration)
@@ -125,7 +140,7 @@ function calcRoute() {
 
             //Get distance and time
             const output = document.querySelector('#output');
-            output.innerHTML = "<div class='alert-info'>From: " + document.getElementById("from").value + ".<br />To: " + document.getElementById("to").value + ".<br /> Walking  distance <i class='fas fa-road'></i> : " + result.routes[0].legs[0].distance.text + ".<br />Duration <i class='fas fa-hourglass-start'></i> : " + days + " days" + hours + " hours" + minutes + "  minutes" + ".</div>" +  "You will burn " + calsPerMIn + " during this journey";
+            output.innerHTML = "<div class='alert-info'>From: " + document.getElementById("from").value + ".<br />To: " + document.getElementById("to").value + ".<br /> Walking  distance <i class='fas fa-road'></i> : " + result.routes[0].legs[0].distance.text + ".<br />Duration <i class='fas fa-hourglass-start'></i> : " + days + hours + minutes +  ".</div>" +  "You will burn " + calsPerMIn + " during this journey";
 
             //display route
             directionsDisplay.setDirections(result);
