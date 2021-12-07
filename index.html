@@ -40,7 +40,7 @@
 
                         </div>
                         <div class="col-12">
-                            <label for="speed" class="form-label" >Choose your walking speed:</label>
+                            <label for="speed" class="form-label">Choose your walking speed:</label>
                             <select id="selectbox" name="speed" class="form-control">
                                 <option value="1">Slow</option>
                                 <option value="1.6">Casual</option>
@@ -75,9 +75,9 @@
         <div id="msg"></div>
 
         <div class="jumbotron">
-            <div class="container-fluid">
-                <h1>Find The Distance Between Two Places.</h1>
-                <p>This App Will Help You Calculate Your Travelling Distances.</p>
+            <div class="container-fluid ">
+                <h1 class="text-center">Find The Distance Between Two Places.</h1>
+                <p class="text-center">This App Will Help You Calculate Your Travelling Distances.</p>
                 <form class="form-horizontal">
                     <div class="form-group">
                         <label for="from" class="col-xs-2 control-label"><i class="far fa-dot-circle"></i></label>
@@ -96,12 +96,12 @@
 
                 </form>
 
-                <div class="col-xs-offset-2 col-xs-10">
-                    <button class="btn btn-info btn-lg " id="mainBtn" onclick="calcRoute();"><i
+                <div class="col-xs-offset-2 col-xs-10 button-div">
+                    <button class="btn btn-info btn-lg calculate-btn " id="mainBtn" onclick="calcRoute();"><i
                             class="fas fa-map-signs"></i></button>
                 </div>
             </div>
-           <div class="container-fluid">
+            <div class="container-fluid map-container">
                 <div id="googleMap"></div>
                 <div id="output">
 
@@ -112,7 +112,7 @@
     </div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAh14jX_szt0Dz-eG_aPWZ_T29kYhM6g8&libraries=places">
     </script>
-       <!-- <script
+    <!-- <script
          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAh14jX_szt0Dz-eG_aPWZ_T29kYhM6g8&libraries=places&callback=initAutocomplete"
          async
          defer

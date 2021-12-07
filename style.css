@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
+
 body {
  
     color: #000;
     font-size: 56px;
+    font-family: 'Roboto', sans-serif;
 
 }
 
@@ -23,8 +26,9 @@ body {
   }
 
   .form-container {
-         box-shadow: 20px 20px 20px black,
+      box-shadow: 20px 20px 20px black,
       -10px -10px 20px black;
+      padding: 10px;
   }
 
   .input-container {
@@ -35,6 +39,24 @@ body {
   .header {
       text-align: center;
       padding: 20px ;
+  }
+
+  .button-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .calculate-btn {
+    margin: 10px;
+   
+  }
+
+  .map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
   }
   
  
