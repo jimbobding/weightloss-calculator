@@ -182,3 +182,13 @@ var autocomplete2 = new google.maps.places.Autocomplete(input2, mapOptions);
 
 
 document.getElementById("mainBtn").addEventListener("click", weight);
+
+
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display !== "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
